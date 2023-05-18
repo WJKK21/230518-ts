@@ -1,35 +1,4 @@
-var a = 'ga'; //가위
-var b = 'bo'; //보
-var c = 'ju'; //바위
-function gambambo(na, you) {
-    console.log('ds');
-    // if (na === 'ga') {
-    //   if (na + you === 'gabo'){
-    //     return console.log(true)
-    //   } else if (na + you === 'gaju') {
-    //     return console.log(false)
-    //   } else {
-    //     return console.log('비김')
-    //   }
-    // }/*  else if (na === 'bo') {
-    //   if (na + you === 'boju'){
-    //     return console.log(true)
-    //   } else if (na + you === 'boga') {
-    //     return console.log(false)
-    //   } else {
-    //     return console.log('비김')
-    //   }
-    // } else if (na === 'ju') {
-    //   if (na + you === 'juga'){
-    //     return console.log(true)
-    //   } else if (na + you === 'jubo') {
-    //     return console.log(false)
-    //   } else {
-    //     return console.log('비김')
-    //   }
-    // } */
-}
-console.log(gambambo(a, b));
+"use strict";
 //ga bo ju 가위는 보한테 이기고 주먹한테 진다 
 // 보는 가위한테 지고 주먹한테 이긴다 
 // 주먹은 가위한테 이기고 보한테 진다
@@ -44,5 +13,127 @@ console.log(gambambo(a, b));
  * 무조건 적어준다
  * 1 목적 2 기준 정의
  * 1번째 매개 변수가 가위인 경우 2번째 매개변수가 바위인 경우 리턴 false 반대는 ture
+ * 완성이 됐다면 중복 패턴을 줄 일수 있을까 ?
+ * 내부 함수를 쓸 수 있다면
  *
  */
+
+let a = 'ga'; //가위
+let b = 'bo'; //보
+let c = 'ju'; //바위
+
+let meCount = 0;
+let justCount = 0;
+
+const gambambo = function () {
+    let na = ''
+    let you = ''
+
+    for (let i = 0; i<10; i++ ){
+        let rdn = () => {
+            let ac = [a = 'ga', /* //가위  */ b = 'bo', /* //보  */ c = 'ju' /* //바위 */];
+            let num = Math.floor(Math.random() * 2);
+            return ac[num];
+        };
+    
+        na = rdn ()
+        you = rdn ()
+    justCount += 1;
+    console.log(justCount)
+    if (na !== you) {
+        if (na === 'ga') {
+            if (na + you === 'gabo') {
+                meCount += 1;
+                return console.log('이김');
+            }
+            else if (na + you === 'gaju') {
+                return console.log('짐');
+            }
+        }
+        else if (na === 'bo') {
+            if (na + you === 'boju') {
+                meCount += 1;
+                return console.log('이김');
+            }
+            else if (na + you === 'boga') {
+                return console.log('짐');
+            }
+        }
+        else if (na === 'ju') {
+            if (na + you === 'juga') {
+                meCount += 1;
+                return console.log('이김');
+            }
+            else if (na + you === 'jubo') {
+                return console.log('짐');
+            }
+        }
+    }
+    else {
+        return console.log('셈셈');
+    }
+    }   
+
+};
+
+//console.log(justCount);
+gambambo();
+
+let huakreul = meCount/justCount
+console.log(huakreul);
+
+
+
+/* const gambambo = (na : string, you : string) => {
+  if(na !== you) {
+    if (na === 'ga') {
+      if (na + you === 'gabo'){
+      return console.log(true)
+      } else if (na + you === 'gaju') {
+        return console.log(false)
+      }
+    } else if (na === 'bo') {
+      if (na + you === 'boju'){
+        return console.log(true)
+      } else if (na + you === 'boga') {
+        return console.log(false)
+      }
+    } else if (na === 'ju') {
+      if (na + you === 'juga'){
+        return console.log(true)
+      } else if (na + you === 'jubo') {
+        return console.log(false)
+      }
+    }
+  }else {
+      return console.log('===')
+  }
+  
+     if (na === 'ga') {
+      if (na + you === 'gabo'){
+       return console.log(true)
+      } else if (na + you === 'gaju') {
+        return console.log(false)
+      } else {
+        return console.log('비김')
+      }
+    } else if (na === 'bo') {
+      if (na + you === 'boju'){
+        return console.log(true)
+      } else if (na + you === 'boga') {
+        return console.log(false)
+      } else {
+        return console.log('비김')
+      }
+    } else if (na === 'ju') {
+      if (na + you === 'juga'){
+        return console.log(true)
+      } else if (na + you === 'jubo') {
+        return console.log(false)
+      } else {
+        return console.log('비김')
+      }
+    }
+
+}*/
+//gambambo(a,b)
