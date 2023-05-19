@@ -18,10 +18,6 @@
    * 
    */
 
-  let a = 'ga' //가위
-  let b = 'bo' //보
-  let c = 'ju' //바위
-
 /* const gambambo = (na : string, you : string) => {
   if(na !== you) {
     if (na === 'ga') {
@@ -77,6 +73,10 @@
 
 //gambambo(a,b)
 
+let a = 'ga' //가위
+let b = 'bo' //보
+let c = 'ju' //바위
+
 let meCount = 0;
 let justCount = 0;
 
@@ -125,6 +125,6 @@ let rdn = () => {
 console.log(justCount)
 
 gambambo(rdn(),rdn())
-let huakreul = Math.floor(meCount / justCount)
+let huakreul = meCount / justCount
 
 console.log(huakreul)

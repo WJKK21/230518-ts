@@ -32,55 +32,55 @@ const gambambo = function () {
     for (let i = 0; i<10; i++ ){
         let rdn = () => {
             let ac = [a = 'ga', /* //가위  */ b = 'bo', /* //보  */ c = 'ju' /* //바위 */];
-            let num = Math.floor(Math.random() * 2);
+            let num = Math.floor(Math.random() * 3);
             return ac[num];
         };
     
-        na = rdn ()
-        you = rdn ()
-    justCount += 1;
-    console.log(justCount)
-    if (na !== you) {
+        na += rdn ()
+        you += rdn ()
+      justCount += 1;
+      console.log(justCount)
+      
+      if (na !== you) {
         if (na === 'ga') {
             if (na + you === 'gabo') {
                 meCount += 1;
-                return console.log('이김');
+                console.log('이김');
             }
             else if (na + you === 'gaju') {
-                return console.log('짐');
+                console.log('짐');
             }
         }
         else if (na === 'bo') {
             if (na + you === 'boju') {
                 meCount += 1;
-                return console.log('이김');
+                console.log('이김');
             }
             else if (na + you === 'boga') {
-                return console.log('짐');
+                console.log('짐');
             }
         }
         else if (na === 'ju') {
             if (na + you === 'juga') {
                 meCount += 1;
-                return console.log('이김');
+                console.log('이김');
             }
             else if (na + you === 'jubo') {
-                return console.log('짐');
+                console.log('짐');
             }
         }
     }
     else {
         return console.log('셈셈');
     }
-    }   
-
+  }
 };
 
 //console.log(justCount);
 gambambo();
 
 let huakreul = meCount/justCount
-console.log(huakreul);
+console.log(`${huakreul}`);
 
 
 
